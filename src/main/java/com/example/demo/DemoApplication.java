@@ -5,6 +5,7 @@ import org.apache.activemq.command.ActiveMQTopic;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
@@ -21,6 +22,7 @@ import javax.jms.Topic;
 @EnableScheduling//开启定时任务
 @EnableAsync//开启异步任务
 @MapperScan("com.example.demo.mapper")//开启扫描mapper
+@ServletComponentScan//开启扫描filter
 public class DemoApplication {
 
 
