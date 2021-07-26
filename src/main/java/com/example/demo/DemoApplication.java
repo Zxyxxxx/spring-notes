@@ -22,7 +22,7 @@ import javax.jms.Topic;
 @EnableScheduling//开启定时任务
 @EnableAsync//开启异步任务
 @MapperScan("com.example.demo.mapper")//开启扫描mapper
-@ServletComponentScan//开启扫描filter
+@ServletComponentScan//开启扫描filters扫描servlet
 public class DemoApplication {
 
 
