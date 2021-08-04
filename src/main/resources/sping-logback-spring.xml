@@ -2,7 +2,7 @@
 
 
 <configuration>
-    <property name="LOG_HOME" value="/Users/zxy" />
+    <property name="LOG_HOME" value="/Users/zxy"/>
 
 
     <appender name="consoleApp" class="ch.qos.logback.core.ConsoleAppender">

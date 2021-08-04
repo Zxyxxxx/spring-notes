@@ -9,11 +9,12 @@ import java.io.IOException;
 /**
  * 自定义拦截器
  */
-@WebFilter(urlPatterns = "/api/*",filterName = "loginFilter")//标记一个类为filter，被spring扫描 支持正则
+@WebFilter(urlPatterns = "/api/*", filterName = "loginFilter")//标记一个类为filter，被spring扫描 支持正则
 public class LoginFilter implements Filter {
 
     /**
      * 初始化容器时加载
+     *
      * @param filterConfig
      * @throws ServletException
      */
@@ -25,6 +26,7 @@ public class LoginFilter implements Filter {
 
     /**
      * 请求被拦截时调用
+     *
      * @param servletRequest
      * @param servletResponse
      * @param filterChain
@@ -37,9 +39,9 @@ public class LoginFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String username = request.getParameter("username");
-        if("xxx".equals(username)){
-            filterChain.doFilter(servletRequest,servletResponse);
-        }else {
+        if ("xxx".equals(username)) {
+            filterChain.doFilter(servletRequest, servletResponse);
+        } else {
             return;
         }
 

@@ -29,20 +29,20 @@ public class ProductServiceImpl implements ProductService {
     //发送消息，destination是发送到的队列，message是待发送消息
     @Override
     public void sendMessage(Destination destination, final String message) {
-        jmsMessagingTemplate.convertAndSend(destination,message);
+        jmsMessagingTemplate.convertAndSend(destination, message);
     }
 
 
     //发送消息，默认队列
     @Override
     public void sengMessage(final String message) {
-        jmsMessagingTemplate.convertAndSend(this.queue,message);
+        jmsMessagingTemplate.convertAndSend(this.queue, message);
     }
 
 
     //发布订阅
     @Override
     public void publish(String msg) {
-        this.jmsMessagingTemplate.convertAndSend(this.topic,msg);
+        this.jmsMessagingTemplate.convertAndSend(this.topic, msg);
     }
 }

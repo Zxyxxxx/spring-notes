@@ -17,18 +17,15 @@ public class RedisController {
 
 
     @GetMapping("/add")
-    public Object add(String key,String value){
-        redisClient.set(key,value);
+    public Object add(String key, String value) {
+        redisClient.set(key, value);
         return JsonData.buildSuccess("OK");
     }
 
     @RequestMapping("/get")
-    public Object get(String key){
+    public Object get(String key) {
         return redisClient.get(key);
     }
-
-
-
 
 
 }

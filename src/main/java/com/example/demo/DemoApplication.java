@@ -28,17 +28,18 @@ public class DemoApplication {
 
     //交给spring管理的队列，方便后续注入
     @Bean
-    public Queue queue(){
+    public Queue queue() {
         return new ActiveMQQueue("common.queue");
     }
 
 
     /**
      * 主题队列交给spring管理
+     *
      * @return
      */
     @Bean
-    public Topic topic(){
+    public Topic topic() {
         return new ActiveMQTopic("video.topic");
     }
 
@@ -46,20 +47,16 @@ public class DemoApplication {
     /**
      * 给topic定义独立的JmsListenerContainerFactory
      * 定义此方法就可以去掉spring.jms.pub-sub-domain=true配置
+     *
      * @param
      */
     @Bean
-    public JmsListenerContainerFactory<?> jmsListenerContainerFactory(ConnectionFactory activeMQConnectionFactory){
+    public JmsListenerContainerFactory<?> jmsListenerContainerFactory(ConnectionFactory activeMQConnectionFactory) {
         DefaultJmsListenerContainerFactory bean = new DefaultJmsListenerContainerFactory();
         bean.setPubSubDomain(true);
         bean.setConnectionFactory(activeMQConnectionFactory);
         return bean;
     }
-
-
-
-
-
 
 
     public static void main(String[] args) {

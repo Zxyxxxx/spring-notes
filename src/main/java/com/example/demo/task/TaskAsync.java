@@ -20,7 +20,7 @@ public class TaskAsync {
         long start = System.currentTimeMillis();
         Thread.sleep(1000L);
         long end = System.currentTimeMillis();
-        System.out.println("task1执行时间："+(end-start));
+        System.out.println("task1执行时间：" + (end - start));
     }
 
 
@@ -28,14 +28,14 @@ public class TaskAsync {
         long start = System.currentTimeMillis();
         Thread.sleep(2000L);
         long end = System.currentTimeMillis();
-        System.out.println("task2执行时间："+(end-start));
+        System.out.println("task2执行时间：" + (end - start));
     }
 
     public void task3() throws InterruptedException {
         long start = System.currentTimeMillis();
         Thread.sleep(3000L);
         long end = System.currentTimeMillis();
-        System.out.println("task3执行时间："+(end-start));
+        System.out.println("task3执行时间：" + (end - start));
     }
 
 
@@ -44,12 +44,9 @@ public class TaskAsync {
         long start = System.currentTimeMillis();
         Thread.sleep(3000L);
         long end = System.currentTimeMillis();
-        System.out.println("task4执行时间："+(end-start));
+        System.out.println("task4执行时间：" + (end - start));
         return new AsyncResult<>("任务4");
     }
-
-
-
 
 
 }

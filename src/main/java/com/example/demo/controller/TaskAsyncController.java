@@ -18,7 +18,6 @@ public class TaskAsyncController {
     private TaskAsync taskAsync;
 
 
-
     @RequestMapping("/task1")
     public Object task1() throws InterruptedException {
         long start = System.currentTimeMillis();
@@ -27,7 +26,7 @@ public class TaskAsyncController {
         taskAsync.task3();
         long end = System.currentTimeMillis();
 
-        System.out.println("执行总耗时："+(end-start));
+        System.out.println("执行总耗时：" + (end - start));
         return JsonData.buildSuccess("OK");
     }
 

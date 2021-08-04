@@ -10,8 +10,8 @@ import java.io.IOException;
 /**
  * 自定义servlet
  */
-@WebServlet(name = "userServlet",urlPatterns = "/v1/api/test")
-public class UserServlet extends HttpServlet{
+@WebServlet(name = "userServlet", urlPatterns = "/v1/api/test")
+public class UserServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().println("custom servlet");
@@ -22,6 +22,6 @@ public class UserServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doGet(req,resp);
+        this.doGet(req, resp);
     }
 }

@@ -25,32 +25,26 @@ public class ActiveMqController {
      * 模拟支付回调，回调信息放入队列进行
      */
     @GetMapping("/order")
-    public Object order(String msg){
+    public Object order(String msg) {
         //生成消息队列
         Destination destination = new ActiveMQQueue("order.queue");
-        productService.sendMessage(destination,msg);
+        productService.sendMessage(destination, msg);
         return JsonData.buildSuccess();
     }
 
 
     @GetMapping("/common")
-    public Object common(String msg){
+    public Object common(String msg) {
         productService.sengMessage(msg);
         return JsonData.buildSuccess();
     }
 
 
-
     @GetMapping("/topic")
-    public Object topic(String msg){
+    public Object topic(String msg) {
         productService.publish(msg);
         return JsonData.buildSuccess();
     }
-
-
-
-
-
 
 
 }

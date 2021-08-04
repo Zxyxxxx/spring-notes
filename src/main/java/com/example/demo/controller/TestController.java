@@ -12,7 +12,7 @@ public class TestController {
 
 
     @GetMapping("test")
-    public Object test(){
+    public Object test() {
         return JsonData.buildSuccess();
     }
 

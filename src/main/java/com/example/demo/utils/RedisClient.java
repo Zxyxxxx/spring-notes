@@ -14,15 +14,16 @@ public class RedisClient {
 
     /**
      * redis设置字符串缓存
+     *
      * @param key
      * @param value
      * @return
      */
-    public boolean set(String key,String value){
+    public boolean set(String key, String value) {
         try {
-            redisTemplate.opsForValue().set(key,value);
+            redisTemplate.opsForValue().set(key, value);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
@@ -31,14 +32,13 @@ public class RedisClient {
 
     /**
      * 通过key获取value
+     *
      * @param key
      * @return
      */
-    public String get(String key){
+    public String get(String key) {
         return redisTemplate.opsForValue().get(key);
     }
-
-
 
 
 }

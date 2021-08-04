@@ -32,13 +32,12 @@ public class CustomExtHandler {
      * 处理自定义异常
      */
     @ExceptionHandler(value = MyException.class)
-    Object handleMyException(Exception e,HttpServletRequest request){
+    Object handleMyException(Exception e, HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("error.html");
-        modelAndView.addObject("msg",e.getMessage());
+        modelAndView.addObject("msg", e.getMessage());
         return modelAndView;
     }
-
 
 
 }

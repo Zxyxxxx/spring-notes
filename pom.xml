@@ -27,7 +27,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-       <!--加载Redis-->
+        <!--加载Redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -89,9 +89,6 @@
             </plugin>
         </plugins>
     </build>
-
-
-
 
 
 </project>

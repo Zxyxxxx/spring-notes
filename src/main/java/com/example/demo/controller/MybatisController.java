@@ -24,25 +24,23 @@ public class MybatisController {
 
 
     @RequestMapping("/insert")
-    public Object insert(User user){
+    public Object insert(User user) {
         userService.insertUser(user);
         return JsonData.buildSuccess(user.getId());
     }
 
 
-
     @RequestMapping("/get")
-    public Object get(Integer id){
+    public Object get(Integer id) {
         User user = userService.get(id);
         return JsonData.buildSuccess(user);
     }
 
 
-
     @GetMapping("test/exception")
-    public Object test(){
-        if(true){
-            throw new MyException("-12","异常");
+    public Object test() {
+        if (true) {
+            throw new MyException("-12", "异常");
         }
         return null;
     }
